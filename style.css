@@ -92,8 +92,8 @@ a:active {
 
 /* Intro fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; top: 30px; }   /* starts invisible, 30px lower */
-  to { opacity: 1; top: 0; }      /* ends visible, in place */
+  from { opacity: 0; transform: translateY(30px); }   /* starts invisible, 30px lower */
+  to { opacity: 1; transform: translateY(0); }      /* ends visible, in place */
 }
 
 #intro h2 {
@@ -114,7 +114,7 @@ a:active {
   font-size: 30px;
 }
 
-#treatments h2, #treatments h3 {
+#treatments h2, #treatments h3, #treatments h4 {
   font-family: "Tenor Sans", sans-serif;
   font-weight: normal;
   text-transform: uppercase;
@@ -146,6 +146,88 @@ img {
 
 p {
   margin: 20px 0px;
+}
+
+/* More info buttons on the treatment cards */
+.info-btn {
+  background-color: transparent;
+  color: #B86F52;
+  border: 1px solid #B86F52;
+  padding: 7px 20px;
+  font-family: "Tenor Sans", sans-serif;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+}
+
+.info-btn:hover {
+  background-color: #B86F52;
+  color: #1F3D3A;
+}
+
+/* Facials pop up styling */
+
+/* Pop-up darkened background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none; /* hides the pop-up until user clicks More info */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;  /* Brings the pop-up to the top*/
+}
+
+/* Pop-up white box inside darkened background */
+.popup-box {
+  width: 50%;
+  max-height: 80%;
+  background-color: #FAF6F1;
+  padding: 30px;
+  overflow-y: auto;  /* scrollbar */
+}
+
+.close-btn {
+  display: block;
+  margin-left: auto;
+} 
+
+.duration {
+  text-transform: none;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.popup-box h3, .popup-intro {
+  text-align: center;
+}
+
+.popup-box h3 {
+  font-size: 28px;
+}
+
+#treatments .popup-box h4 {
+  font-weight: bold;
+}
+
+/* Book this treatment button in the pop-ups */
+.book-btn {
+  display: block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #1F3D3A;
+  color: white;
+  text-align: center;
+  font-family: "Tenor Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #B86F52;
 }
 
 
@@ -327,15 +409,27 @@ footer > p {
   margin: 0 auto 10px auto; 
 }
 
-/* Media Queries */
+/* ---------------------- Media Queries -------------------------- */
 @media screen and (max-width: 1170px) {
   header {
     flex-direction: column;
   }
 
+  #intro {
+    width: 70%;
+  }
+
   #intro h2 {
     font-size: 45px;
   }
+
+  .popup-box {
+  width: 60%;
+  }
+
+  .popup-box h3 {
+  font-size: 26px;
+}
 }
 
 @media screen and (max-width: 819px) {
@@ -350,6 +444,14 @@ footer > p {
 
   #contact-info-right {
     margin-top: 40px;           /* space between the two when stacked */
+  }
+
+  .popup-box {
+  width: 70%;
+  }
+
+  .popup-box h3 {
+    font-size: 22px;
   }
 
 }
@@ -379,6 +481,14 @@ footer > p {
 
   #intro h2 {
     font-size: 40px;
+  }
+
+  .popup-box {
+  width: 80%;
+  }
+
+  .popup-box h3 {
+    font-size: 20px;
   }
 
   footer {
