@@ -1,0 +1,393 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tahoma";
+  margin: 0px;
+  accent-color: #1F3D3A;
+}
+
+
+/* Home background image */
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("images/home.jpg");
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+/* } Style the Header */
+header {
+  display: flex;
+  font-family: "Cormorant", serif;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div {
+  width: 50%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+/* } Style the NavBar */
+nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px 100px;
+}
+
+.btn { /* Sets the rules for ALL Buttons on the webpage */
+  font-family: inherit;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+}
+
+/* Seudo class */
+.btn:hover {  /* Changes the botton rules when hovering over it */
+  background-color: #e1a639;
+  color: #fff;
+}
+
+.nav-link {
+  list-style: none;  /* takes away bullet points  */
+  margin: 2px 5px;
+  padding: 8px 15px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.btn:hover > a {
+  color: #fff;
+  cursor: pointer;
+}
+
+a:active {
+  color: #B86F52;
+}
+
+/* Intro styling */
+#intro {
+  width: 60%;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  color: white;
+  position: relative;  /* lets the keyframes move it */
+  animation-name: fadeIn;
+  animation-duration: 5s;
+}
+
+/* Intro fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; top: 30px; }   /* starts invisible, 30px lower */
+  to { opacity: 1; top: 0; }      /* ends visible, in place */
+}
+
+#intro h2 {
+  font-family: "Dawning of a New Day", cursive;
+  font-size: 65px;
+  /* font-weight: normal; */
+}
+
+/* Treatment styling */
+#treatments {
+  background-color: #1F3D3A;
+  color: #B86F52;
+  padding: 60px 0;
+}
+
+#treatments h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+#treatments h2, #treatments h3 {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+#tcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;   /* stops the row getting too wide on big screens */
+  margin: 0 auto;
+}
+
+.tcard {
+  width: 300px;
+  /* background-color: #FAF6F1;
+  padding: 20px; */
+  margin: 20px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.tcard img {
+  border-radius: 6px;
+}
+
+p {
+  margin: 20px 0px;
+}
+
+
+
+
+/* Contact and Gift card section */
+#contact {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #1F3D3A;
+}
+
+#contact h2 {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+
+
+/* Left section - Make an appointment */
+#booking-left {
+  width: 55%;
+  border: 1px solid #e5e5e5;
+  padding: 40px 40px;
+}
+
+#contact-info-right h2 {
+  margin-top: 40px;
+}
+
+/* Booking form text boxes */
+#booking-left input[type=text],
+#booking-left input[type=email],
+#booking-left input[type=tel],
+#booking-left textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 15px;
+  color: #1F3D3A;
+}
+
+/* Form question headings */
+.question {
+  display: block;      /* lets margin work above and below */
+  margin: 10px 0 8px 0;
+  font-weight: bold;
+}
+
+/* Two columns of checkboxes */
+.interest-columns {
+  display: flex;
+}
+
+.interest-columns div {
+  width: 50%;
+}
+
+/* Booking submit button */
+#booking-left input[type=submit] {
+  margin-top: 15px;
+  background-color: #1F3D3A;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-family: "Tenor Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+
+
+/* Right section - Contact us & Gift card */
+#contact-info-right {
+  width: 40%;
+}
+
+#contact-info-right h3 {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: normal;
+  margin: 10px 0 0px 0;
+}
+
+#contact-info-right a {      /* terracotta links */
+  color: #B86F52;
+  line-height: 1.8;
+}
+
+/* Social icons */
+#contact-info-right .fa-brands {
+  margin: 5px 5px 0 0;
+}
+
+/* Gift card form box */
+#gift-card {
+  background-color: #B86F52;
+  color: white;
+  padding: 35px;
+  outline: 1px solid white;
+  outline-offset: -15px;
+}
+
+/* Gift card text boxes and dropdown */
+#gift-card input[type=text],
+#gift-card input[type=email],
+#gift-card textarea,
+#gift-card select {
+  display: block;
+  width: 100%;
+  padding: 5px 12px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #FAF6F1;
+  font-family: inherit;
+  font-size: 15px;
+  color: #1F3D3A;
+}
+
+/* Hide the recipient's email by default */
+#gift-card input[name=recipient-email] {
+  display: none;
+}
+
+/* Show it when "send to recipient" is ticked */
+#send-them:checked ~ input[name=recipient-email] {
+  display: block;
+}
+
+/* Gift card submit button */
+#gift-card input[type=submit] {
+  /* margin-top: 10px; */
+  background-color: white;
+  color: #B86F52;
+  border: none;
+  padding: 8px 30px;
+  font-family: "Tenor Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#gift-card input[type=submit]:hover {
+  background-color: #1F3D3A;
+  color: white;
+}
+
+
+footer {
+  display: flex;
+  padding: 20px;
+  text-align: center;
+  background-color: #1F3D3A;
+  color: #B86F52;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;   /* centres the map and address together */
+  align-items: center;      /* lines the address up with the middle of the map */
+}
+
+#address {
+  margin-left: 20px;
+  text-align: left;
+}
+footer > p {
+  align-self: flex-end;     /* only this item goes to the bottom */
+  margin: 0 auto 10px auto; 
+}
+
+/* Media Queries */
+@media screen and (max-width: 1170px) {
+  header {
+    flex-direction: column;
+  }
+
+  #intro h2 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 819px) {
+  #contact {
+    flex-direction: column;     /* stack left on top of right */
+  }
+
+  #booking-left,
+  #contact-info-right {
+    width: 100%;                /* each side fills the screen */
+  }
+
+  #contact-info-right {
+    margin-top: 40px;           /* space between the two when stacked */
+  }
+
+}
+@media screen and (max-width: 668px) {
+  header {
+    flex-direction: column;
+  }
+
+  header div {
+    width: 100%;
+  }
+  ul {
+  flex-direction: column;
+  }
+
+  #intro {
+    width: 90%;
+  }
+  nav > ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 5px 10px;
+  }
+
+  #intro h2 {
+    font-size: 40px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer > p {
+    align-self: center;
+    margin: 20px 0 10px 0;
+  }
+}
