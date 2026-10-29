@@ -17,7 +17,7 @@ for (let i = 0; i < infoBtns.length; i++) {
   });
 }
 
-//Close popup function
+//closePopup function
 function closePopup(num) {
   popups[num].style.display = "none"; // Hide the pop-up by setting display back to none
 }
@@ -39,6 +39,7 @@ function bookTreatment(num) {
 
 for (let i = 0; i < bookBtns.length; i++) {
   bookBtns[i].addEventListener("click", function () {
+    // call bookTreatment function
     bookTreatment(i);
   });
 }
